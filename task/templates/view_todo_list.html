@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}To-Do List{% endblock %}
+
+{% block content %}
+    <h1>To-Do List</h1>
+    {% if todo_list %}
+        <ul>
+            {% for task in todo_list %}
+                <li>{{ task.description }}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>There are no tasks in the to-do list.</p>
+    {% endif %}
+{% endblock %}
